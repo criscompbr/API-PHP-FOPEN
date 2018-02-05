@@ -7,7 +7,7 @@ require_once "class/apiCliente.php";
 
 $c = new cliente();
 
-$utilize = 'Utilize o exemplo do url http://' . $_SERVER['HTTP_HOST'] . '/?r=getCupons';
+$utilize = 'Utilize o exemplo do url http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?r=getCupons';
 if(!isset($_GET['r'])){
   echo $utilize;
 }else{
@@ -107,6 +107,5 @@ if(!isset($_GET['r'])){
     // Retorna link invalido
     default:
       echo $utilize;
-
   }
 }
